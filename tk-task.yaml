@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: echo-task
+  namespace: default
+spec:
+  description: my first tekton task
+  steps:
+    - name: echo-step
+      image: alpine:3.14
+      script: |
+        #!/bin/sh
+        echo "Hello, world!"
+

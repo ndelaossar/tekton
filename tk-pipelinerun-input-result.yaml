@@ -1,0 +1,8 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: taks-pipeline-input-result-run
+spec:
+  pipelineRef:
+    name: taks-pipeline-input-result
+

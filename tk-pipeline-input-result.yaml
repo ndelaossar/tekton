@@ -1,0 +1,19 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: taks-pipeline-input-result
+spec:
+  tasks:
+    - name: task-process-input
+      taskRef:
+        name: task-input-result
+      params:
+        - name: input-message
+          value: "Hello, First Task Input-Result"
+    - name: task-print-output
+      taskRef:
+        name: task-input
+      params:
+        - name: input-message
+          value: "$(tasks.task-process-input.results.output-message)"
+

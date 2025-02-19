@@ -1,0 +1,9 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: task-input-result
+  namespace: default
+spec:
+  taskRef:
+    name: task-input
+

@@ -1,0 +1,19 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: taks-pipeline-input
+spec:
+  tasks:
+    - name: task-run-input-1
+      taskRef:
+        name: task-input
+      params:
+        - name: input-message
+          value: "Hello, First Task"
+    - name: task-run-input-2
+      taskRef:
+        name: task-input
+      params:
+        - name: input-message
+          value: "Hello, Second Task"
+
